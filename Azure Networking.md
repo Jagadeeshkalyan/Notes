@@ -54,8 +54,7 @@ NOTE: 2^n -2 (minus 2 is for multicast & reserved)
 
 * Convention of Public Networks and Private Networks:
 	--> Public Networks are ip addresses which are accessible over internet
-	--> Private networks are for private usage & there are some reserved ip ranges for private networking. In all the clouds and in the 
-	enterprise when we configure networking its always private network.
+	--> Private networks are for private usage & there are some reserved ip ranges for private networking. In all the clouds and in the enterprise when we configure networking its always private network.
 		1. 192.168.0.0/16
 		2. 10.0.0.0/8
 		3. 172.16.0.0/12

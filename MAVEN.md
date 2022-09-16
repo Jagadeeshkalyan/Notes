@@ -53,8 +53,7 @@ core concepts of Maven :
 
 2. Dependencies and Repositories:
 	=> Repositories are folders containing bundled JAR files, and dependencies are external Java libraries necessary for Project. 
-	=> Maven retrieves dependencies from a central Maven repository and places them in your local repository if they aren't found in the local
-          Maven repository.
+	=> Maven retrieves dependencies from a central Maven repository and places them in your local repository if they aren't found in the local Maven repository.
 
 3. Build Life Cycles, Phases, and Goals:
 	=>A build life cycle is made up of a series of build phases, each of which contains a set of goals. 
@@ -81,9 +80,7 @@ core concepts of Maven :
 		=> It is frequently used to host internal organization projects. 
 		=> The dependencies are subsequently downloaded into your local repository by Maven.
 
-     -> Maven scans these repositories for dependencies. Maven looks in the Local repository first, 
-	then the Central repository, and finally the Remote repository if the Remote repository is 
-	defined in the POM.
+     -> Maven scans these repositories for dependencies. Maven looks in the Local repository first, then the Central repository, and finally the Remote repository if the Remote repository is defined in the POM.
 
 * Phases of the default life cycle:
 
@@ -91,8 +88,7 @@ core concepts of Maven :
 		=> Make sure the project is correct and that you have all of the necessary information.
 
 	2.Test: 
-		=> Test the compiled source code using an appropriate unit testing framework. These tests should not demand that the code be 
-                  packed or deployed; instead, take the compiled code and package it in a manner that can be distributed, such as a JAR.
+		=> Test the compiled source code using an appropriate unit testing framework. These tests should not demand that the code be packed or deployed; instead, take the compiled code and package it in a manner that can be distributed, such as a JAR.
 
 	3.Compile: 
 		=> Compile the project's source code.
@@ -142,8 +138,7 @@ core concepts of Maven :
 
 --> A snapshot is a specific version of a project that shows the most recent development copy of the project being worked on.
 
---> Maven saves all of the JARs, dependency files, and other things it downloads in the Maven local repository. All of the artifacts are kept 
-    locally in the Maven local repository, which is a folder on the local machine.
+--> Maven saves all of the JARs, dependency files, and other things it downloads in the Maven local repository. All of the artifacts are kept locally in the Maven local repository, which is a folder on the local machine.
 
 * Maven build profiles are:
 

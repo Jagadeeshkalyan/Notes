@@ -31,7 +31,7 @@
 
 * Periodic Backup plugin is installed to get the jenkins backup & restore.
 	--> Once the plugin is installed navigate to Manage Jenkins => Uncategorized => Periodic Backup Manager => configure.
-	--> then we can see backup now &restore options. 
+	--> then we can see backup now & restore options. 
 
 * User Administration:
 		Manage jenkins -> configure global security

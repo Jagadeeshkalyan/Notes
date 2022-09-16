@@ -51,6 +51,10 @@ git config --global user.email 'qtdevops@gmail.com
 * Tracked files - Part of version control i.e. local repo
 
 * UnTracked - New file which is not a part of version control i.e. local repo 
+* To remove the modified changes from the working tree(unstaged) before adding 
+  ```
+  git checkout filename
+  ```
 
 * Log - History of commit(user's log)
 ```
@@ -74,7 +78,7 @@ git reset --mixed HEAD~i
 * Reflog - Git maintains a log on its own for all the changes you make in your local repo
 
 * Checkout - in Initial branch (master) => To remove or revert the changes from working tree / Move head to the previous commit 
-	git checkout <commitid> - moves the head position to particular id but the master pointer 							  will be at the latest version 
+	git checkout <commitid> - moves the head position to particular id but the master pointer will be at the latest version 
     git checkout master - moves to the latest version
                         - After creating branch, it is used to switch between branches
 	git checkout -b <branch_name> - To create new branch and move the head to new branch
@@ -108,13 +112,28 @@ git merge <branch what has to be merged>
   ```
   git reset --merge
   ```
-  * 
+  * fix the merge
+    * after fixing the conflit add and commit the changes.
 --->If the head points to a commit id rather than branch. This state is called as Detached HEAD
 
-* commit --amend - this command is used to rewrite the spelling mistakes in latest version
+* commit --amend: 
+  * This command is used to rewrite the spelling mistakes in latest version.
+  * Mistake is done in latest commit message.
 
-* Rebase - specializes in changing from one branch to other
-		git rebase -i <Head~position> - To fix the changes in the history
+* **Rebase** - specializes in changing from one branch to other
+   ```
+   git rebase -i <Head~position> - To fix the changes in the history
+   ```
+  * pick <commit> = use commit
+  * reword  <commit> = use commit, but edit the commit msg
+  * edit  <commit> = use commit, but stop for ammending
+  * squash <commit> = use commit, but meld into previous commit
+  * fixup <commit> = like squash, but discard the commit's log message
+  * exec <command> = run command the rest of line using shell
+  * break = stop here (continue rebase later with git rebase --continue)
+  * drop <commit> = remove commit
+  * label <label> = label current HEAD with a name
+  * reset <label> = reset head to a label
 
 * A bare repository will have only .git folder and it doesn't have the working tree
 
@@ -152,24 +171,13 @@ git merge <branch what has to be merged>
 
 --> ".gitignore" file is created to create a ignore specification.
 
-* pick <commit> = use commit
-* reword  <commit> = use commit, but edit the commit msg
-* edit  <commit> = use commit, but stop for ammending
-* squash <commit> = use commit, but meld into previous commit
-* fixup <commit> = like squash, but discard the commit's log message
-* exec <command> = run command the rest of line using shell
-* break = stop here (continue rebase later with git rebase --continue)
-* drop <commit> = remove commit
-* label <label> = label current HEAD with a name
-* reset <label> = reset head to a label
-
 * git clone:
   * The command creates a copy (or clone) of an existing git repository. Generally, it is used to get a copy of the remote repository to the local repository.
 
 * git config:
   * Command is a convenient way to set configuration options for defining the behavior of the repository, user information and preferences, git installation-based configurations, and many such things. 
 
-* considered to be easy to work on Git:
+* Considered to be easy to work on Git:
   * With the help of git, developers have gained many advantages in terms of performing the development process faster and in a more efficient manner. Some of the main features of git which has made it easier to work are:
     * Branching Capabilities
     * Distributed manner of development
@@ -182,7 +190,7 @@ git merge <branch what has to be merged>
 
 * Deleting a branching scenario occurs for multiple reasons. One such reason is to get rid of the feature branches once it has been merged into the development branch.
 
-* "git remote" command creates an entry in  git config that specifies a name for a particular URL. Whereas "git clone" creates a new git repository by copying an existing one located at the URL.
+* "git remote" command creates an entry in git config that specifies a name for a particular URL. Whereas "git clone" creates a new git repository by copying an existing one located at the URL.
 
 * "git stash apply" command is used for bringing the works back to the working directory from the stack where the changes were stashed using git stash command.
 * This helps the developers to resume their work where they had last left their work before switching to other branches.
