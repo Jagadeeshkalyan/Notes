@@ -37,6 +37,35 @@ apt update
 apt install ansible
 ansible --version   - verify the version
 
-generae a ssh key pair (public and private keys) on Ansible server and add the content of id_rsa.pub to the authorized_keys of traget servers to communicate with other each other without password authentication.
+generae a ssh key pair (public and private keys) on Ansible server and add the content of id_rsa.pub to the authorized_keys of traget servers to communicate with each other without password authentication.
 
 ssh-keygen 
+
+Playbook:
+Ansible palybook is nothing but Ansible files which required to execute ansible commands
+- Sometimes we run ansible adhoc commands instead of writing Ansible playbook all the times.
+
+Inventory file:
+- A file where we store the IP addressess of the remote or target servers.
+- Default location of the inventory file is /etc/ansible/hosts
+
+Ad-hoc command: to run a single or simple tasks, we run ansible ad-hoc commands.
+- ansible -i inventory all -m "shell" -a "touch testfile"
+
+. -m: Module
+. -a: arguments to be passed
+
+- Group of the servers in inventory file
+    - when you run a specific command/playbook on particular servers, make a group of servers in the inventory file.
+
+    eg.
+    [webservers]
+    10.2.43.76
+
+    [dbservers]
+    10.4.67.34
+ 
+ ansible -i inventory webservers -m "shell" -a "touch testfile"
+
+Playbook: to run/execute set of commands, use Ansible playbook
+
