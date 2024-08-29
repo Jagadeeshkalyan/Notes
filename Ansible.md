@@ -65,7 +65,46 @@ Ad-hoc command: to run a single or simple tasks, we run ansible ad-hoc commands.
     [dbservers]
     10.4.67.34
  
- ansible -i inventory webservers -m "shell" -a "touch testfile"
+ adhoc command: ansible -i inventory webservers -m "shell" -a "touch testfile"
 
 Playbook: to run/execute set of commands, use Ansible playbook
 
+---
+- name: Install and Start Nginx     # playbook name
+  hosts: webservers     # x.x.x.x or group of inventory or all
+  become: true      #root user by default
+
+  tasks:        # tasks to be executed through playbook
+    - name: Install Nginx
+      yum:
+        name: nginx
+        state: present
+    - name: Start Nginx
+      service:
+        name: nginx
+        state: started
+
+Command to execute playbook:
+    - ansible-playbook -i inventory ngnix-playbook.yml
+
+Ansible Roles:
+    - Roles use to improve the efficiency to write complex playbooks
+
+    Scenario: If I have to configure kubernetes cluster, it will have close to 50 to 60 tasks. we have lot of variables, parameters, certificates, secrets that we have to configure while creating kubernetes cluster.
+
+    for that reason if we go with Roles concept, we can segerate each tasks and we can properly structure your ansible playbook. 
+
+    ansible-galaxy role init kubernetes
+
+    Ansible create a role for kuberetes and will have bunch of files and folders are created which will user to structure proper playbook.
+
+    - templates
+    - files
+    - README.md
+    - tasks
+    - handlers
+    - tests
+    - vars
+    - defaults
+    - meta
+    
