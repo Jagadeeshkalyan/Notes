@@ -1,4 +1,4 @@
-Configuration Management is a way How DevOps Engineer manage the configuration the servers or configuration of the infrastructure.
+Configuration Management is a way How DevOps Engineer manage the configuration of the servers or configuration of the infrastructure.
 On-premise challenges:
 1. upgrades
 2. secure patches 
@@ -12,7 +12,7 @@ if you want to install any packages to the multiple servers, you can witre a ans
 - Ansible uses a agent less model
 - write IP address of the servers or DNS of the servers in an Inventory file and have the password less authentication enabled
 
-The master/Control-M server where we write ansible playbook should be able connect to the all servers without any passowords.
+The master/Control server where we write ansible playbook should be able connect to the all servers without any passowords.
 
 
 Dynamic Inventory: Ansible is capable to auto-detect the server.
@@ -37,7 +37,7 @@ apt update
 apt install ansible
 ansible --version   - verify the version
 
-generae a ssh key pair (public and private keys) on Ansible server and add the content of id_rsa.pub to the authorized_keys of traget servers to communicate with each other without password authentication.
+generate a ssh key pair (public and private keys) on Ansible server and add the content of id_rsa.pub to the authorized_keys of traget servers to communicate with each other without password authentication.
 
 ssh-keygen 
 
