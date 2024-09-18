@@ -1,8 +1,34 @@
 * Jenkins is a self-contained, open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software.
 
 * JENKINS_HOME directory is /var/lib/jenkins.
-
 * It will stores the all the stuff created in jenkins.
+
+Question1: if we forgot username & password of jenkins user where can we get it?
+
+
+Question 2: How to change password of a user in Jenkins
+Ans: login to Jenkins with Admin preveliges, navigate to Manage Jenkins,choose users section to create/delete/modify users that can log into this Jenkins.
+
+Jenkins Core concepts:
+- install java latest version
+- install jenkins
+- In jenkins to create a pipeline we would create a jenkins job/project
+- freestyle project
+
+* increase disk space on /tmp directory.
+mount -t tmpfs tmpfs /tmp -o size=1000M,mode=1777,remount
+
+* if you are unable to login to the user as "Jenkins" in any Linux machines, follow the below:
+
+run the below command:
+
+cat /etc/passwd
+
+if the /bin/false is there for jenkins users, change the shell by running following command.
+
+usermod --shell /bin/bash jenkins  # shell permissions to Jenkins user
+sudo chown jenkins:jenkins -R /var/lib/jenkins/ 
+sudo service jenkins restart
 
 * Jenkins is a Cron/Scheduler on Steriods fine tuned for Continuous Integration and Continuous Deployment.
 
@@ -11,6 +37,15 @@
 * There are lot of plugins available and also if required you can create your own extensions by using JAVA language.
 
 * Installing plugin is not equal to installing software on the jenkins server.
+
+# Giving necessary permission to the Jenkins user:
+
+Giving sudo permissions to jenkins user:
+sudo su root
+visudo
+add below in allow members of group sudo to execute any command
+jenkins ALL=(ALL:ALL) NOPASSWD:ALL
+
 
 * The configurations are stored as xml file under /var/lib/jenkins/jobs/<job-name>/config.xml.
 
